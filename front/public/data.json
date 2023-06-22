@@ -1,0 +1,68 @@
+[
+    {
+        "name": "BASIC",
+        "price": 1000,
+        "features": [
+            "24 HOURS UNLIMITED",
+            "200 Min TalkTime",
+            "OTC Fee - 500 Taka",
+            "Fiber Optics",
+            "24/7 Customer Care"
+        ]
+    },
+    {
+        "name": "STARTUP",
+        "price": 1200,
+        "features": [
+            "24 HOURS UNLIMITED",
+            "400 Min TalkTime",
+            "OTC Fee - 500 Taka",
+            "Fiber Optics",
+            "24/7 Customer Care"
+        ]
+    },
+    {
+        "name": "ENTERPRISE",
+        "price": 1500,
+        "features": [
+            "24 HOURS UNLIMITED",
+            "600 Min TalkTime",
+            "OTC Fee - 500 Taka",
+            "Fiber Optics",
+            "24/7 Customer Care"
+        ]
+    },
+    {
+        "name": "CONFIDENT",
+        "price": 2000,
+        "features": [
+            "24 HOURS UNLIMITED",
+            "1 Public IP",
+            "OTC Fee - 500 Taka",
+            "Fiber Optics",
+            "24/7 Customer Care"
+        ]
+    },
+    {
+        "name": "POSITIVE",
+        "price": 2500,
+        "features": [
+            "24 HOURS UNLIMITED",
+            "1 Public IP",
+            "OTC Fee - 500 Taka",
+            "Fiber Optics",
+            "24/7 Customer Care"
+        ]
+    },
+    {
+        "name": "ADVANCE",
+        "price": 3000,
+        "features": [
+            "1 Public IP",
+            "24 HOURS UNLIMITED",
+            "OTC Fee - 500 Taka",
+            "Fiber Optics",
+            "24/7 Customer Care"
+        ]
+    }
+]
