@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
     const [state, setState] = useState(false)
     const navigation = [
-        { title: "Home", path: "/home" },
+        { title: "Home", path: "/" },
         { title: "Plans", path: "/plans" },
         { title: "About us", path: "/about" },
         { title: "Contact", path: "/contact" }
