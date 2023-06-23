@@ -1,6 +1,25 @@
 import { Link } from "react-router-dom"
 
+import useAuth, { AuthContext } from '../../context/AuthProvider'
+import { useContext } from "react"
+
 export default () => {
+    const { user, loading, createUser } = useContext(AuthContext)
+    // const some = useAuth()
+    // console.log(something)
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const email = e.target.email.value
+        const password = e.target.password.value
+        console.log(email, password)
+        createUser(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+            })
+            .catch(err => console.log(err))
+        e.target.reset()
+    }
     return (
         <main className="w-full h-fit py-12 flex flex-col items-center justify-center bg-gray-50 sm:px-4">
             <div className="w-full space-y-6 text-gray-600 sm:max-w-md">
@@ -58,7 +77,7 @@ export default () => {
                         <p className="inline-block w-fit text-sm bg-white px-2 absolute -top-2 inset-x-0 mx-auto">Or continue with</p>
                     </div>
                     <form
-                        onSubmit={(e) => e.preventDefault()}
+                        onSubmit={handleSubmit}
                         className="space-y-5"
                     >
                         <div>
@@ -68,6 +87,7 @@ export default () => {
                             <input
                                 type="email"
                                 required
+                                name="email"
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />
                         </div>
@@ -78,6 +98,7 @@ export default () => {
                             <input
                                 type="password"
                                 required
+                                name="password"
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />
                         </div>

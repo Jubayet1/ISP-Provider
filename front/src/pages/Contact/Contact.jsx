@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom'
 
 const Contact = () => {
     return (
-        <section className='px-4 mx-auto max-w-7xl md:px-2'>
+        <section className='px-4 py-32 mx-auto max-w-7xl md:px-2'>
             <div className='flex flex-col justify-center items-center'>
                 <h1 className=' font-mono text-xl text-center md:text-3xl '>
                     Contact Us, Our Office Address Down Below
