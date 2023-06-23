@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { createContext, useState } from 'react'
 
 import auth from '../firebase.config'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
+import { GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 
 
 
@@ -14,12 +14,28 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
+    const googleProvider = new GoogleAuthProvider();
+    const twitterProvider = new TwitterAuthProvider();
+    const githubProvider = new GithubAuthProvider()
+
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const loginUser = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    const googleAuth = () => {
+        return signInWithPopup(auth, googleProvider)
+    }
+
+    const twitterAuth = () => {
+        return signInWithPopup(auth, twitterProvider)
+    }
+
+    const githubAuth = () => {
+        return signInWithPopup(auth, githubProvider)
     }
 
     useEffect(() => {
@@ -42,6 +58,9 @@ const AuthProvider = ({ children }) => {
         loading,
         createUser,
         loginUser,
+        googleAuth,
+        twitterAuth,
+        githubAuth
     }
 
     return (
